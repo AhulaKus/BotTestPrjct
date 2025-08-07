@@ -1,7 +1,9 @@
 import httpx
+import logging
 from config import HF_TOKEN
 
 MODEL_URL = "https://router.huggingface.co/v1/chat/completions"
+logger = logging.getLogger(__name__)
 
 async def get_meme_text(topic:str) -> str:
     prompt = (
@@ -25,4 +27,5 @@ async def get_meme_text(topic:str) -> str:
         resp.raise_for_status()
         result = resp.json()
         # Достаем текст:
+        logger.info(f'Текст мема: {result["choices"][0]["message"]["content"].strip()}')
         return result["choices"][0]["message"]["content"].strip()

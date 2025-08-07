@@ -8,7 +8,7 @@ router = Router()
 @router.message(Command('start'))
 async def start_command(message: types.Message) -> None:
     await message.answer('Привет! Я бот, который может создавать ржака-мэмасы.'
-                         '\nТак что, Гхузлик, пиши сюда свой понос, я сделаю конфэтку.')
+                         '\nТак что, Гхузлик, пиши, я сделаю конфэтку.')
 
 @router.message(Command('help'))
 async def help_command(message: types.Message) -> None:

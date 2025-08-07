@@ -24,7 +24,7 @@ async def meme_request_handler(message: types.Message):
         logger.info(f'Поступил запрос на мем: {message.text}')
         topic = text.replace('мем про', '').strip()
         if not topic:
-            await message.answer('Долбаджобус, ты забыл тему для ржаки.'
+            await message.answer('Дурачелла, ты забыл тему для ржаки.'
                                  '\nНапимер: мем про кота')
         else: #Вызов ЛЛМ
             await message.answer(f"Окей! Придумываю мем про: {topic} 🧠💥")
